@@ -44,6 +44,58 @@ export default defineComponent({
   methods: {
     save() {
       console.log(this.form)
+      ;(this.form.description = ''),
+        (this.form.groupPolicyNumber = 0),
+        (this.form.estNumberOfEmployees = 0),
+        (this.form.billing = 0),
+        (this.form.name = ''),
+        (this.form.email = ''),
+        (this.form.address = ''),
+        (this.form.phone = ''),
+        (this.form.plan = ''),
+        (this.form.coverage = ''),
+        (this.form.deductible = 0),
+        (this.form.medicalBenefit = ''),
+        (this.form.medicalBenefitAmount = 0),
+        (this.form.currency = ''),
+        (this.form.medicalBenefitAmountCurrency = ''),
+        (this.form.visionBenefit = ''),
+        (this.form.visionBenefitAmount = 0),
+        (this.form.dentalBenefit = ''),
+        (this.form.dentalBenefitAmount = 0),
+        (this.form.genericPrescriptions = ''),
+        (this.form.genericPrescriptionsAmount = 0),
+        (this.form.nonGenericPrescriptions = ''),
+        (this.form.nonGenericPrescriptionsAmount = 0)
+    },
+    isFormValid() {
+      if (
+        this.form.owner &&
+        this.form.address &&
+        this.form.billing &&
+        this.form.coverage &&
+        this.form.deductible &&
+        this.form.dentalBenefit &&
+        this.form.dentalBenefitAmount &&
+        this.form.email &&
+        this.form.estNumberOfEmployees &&
+        this.form.genericPrescriptions &&
+        this.form.genericPrescriptionsAmount &&
+        this.form.groupPolicyNumber &&
+        this.form.phone &&
+        this.form.medicalBenefit &&
+        this.form.medicalBenefitAmount &&
+        this.form.name &&
+        this.form.plan &&
+        this.form.visionBenefit &&
+        this.form.visionBenefitAmount &&
+        this.form.nonGenericPrescriptionsAmount &&
+        this.form.nonGenericPrescriptions
+      ) {
+        return true
+      } else {
+        return false
+      }
     }
   }
 })
@@ -218,7 +270,7 @@ export default defineComponent({
                   placeholder="0"
                   class="w-[357.5px] mr-[4px] rounded-[4px]"
                 />
-                <currencySelect />
+                <currencySelect v-model="form.currency" />
               </div>
             </label>
           </div>
@@ -234,7 +286,7 @@ export default defineComponent({
               <span class="font-[600] text-[14px] text-[#14171F] mb-[4px]">Medical Benefits</span>
               <div class="flex">
                 <select
-                  class="w-[469.5px] h-[40px] text-[14px] border rounded-lg text-[#667499] border-[#C2C7D6] py-2 px-6"
+                  class="w-[469.5px] hover:bg-[#F6F7F9]/50 outline-none focus:bg-[#F6F7F9] h-[40px] text-[14px] border rounded-lg text-[#667499] border-[#C2C7D6] py-2 px-6"
                   v-model="form.medicalBenefit"
                 >
                   <option disabled value="">Select</option>
@@ -290,7 +342,7 @@ export default defineComponent({
                   placeholder="0"
                   class="w-[357.5px] mr-[4px] rounded-[4px]"
                 />
-                <currencySelect />
+                <currencySelect v-model="form.currency" />
               </div>
             </label>
           </div>
@@ -306,7 +358,7 @@ export default defineComponent({
               <span class="font-[600] text-[14px] text-[#14171F] mb-[4px]">Dental Benefits</span>
               <div class="flex">
                 <select
-                  class="w-[469.5px] h-[40px] text-[14px] border rounded-lg text-[#667499] border-[#C2C7D6] py-2 px-6"
+                  class="w-[469.5px] hover:bg-[#F6F7F9]/50 outline-none focus:bg-[#F6F7F9] h-[40px] text-[14px] border rounded-lg text-[#667499] border-[#C2C7D6] py-2 px-6"
                   v-model="form.dentalBenefit"
                 >
                   <option value="">Select</option>
@@ -326,7 +378,7 @@ export default defineComponent({
                   placeholder="0"
                   class="w-[357.5px] mr-[4px] rounded-[4px]"
                 />
-                <currencySelect />
+                <currencySelect v-model="form.currency" />
               </div>
             </label>
           </div>
@@ -344,7 +396,7 @@ export default defineComponent({
               >
               <div class="flex">
                 <select
-                  class="w-[469.5px] h-[40px] text-[14px] border rounded-lg text-[#667499] border-[#C2C7D6] py-2 px-6"
+                  class="w-[469.5px] hover:bg-[#F6F7F9]/50 outline-none focus:bg-[#F6F7F9] h-[40px] text-[14px] border rounded-lg text-[#667499] border-[#C2C7D6] py-2 px-6"
                   v-model="form.genericPrescriptions"
                 >
                   <option value="">Select</option>
@@ -364,7 +416,7 @@ export default defineComponent({
                   placeholder="0"
                   class="w-[357.5px] mr-[4px] rounded-[4px]"
                 />
-                <currencySelect />
+                <currencySelect v-model="form.currency" />
               </div>
             </label>
           </div>
@@ -375,7 +427,7 @@ export default defineComponent({
               >
               <div class="flex">
                 <select
-                  class="w-[469.5px] h-[40px] text-[14px] border rounded-lg text-[#667499] border-[#C2C7D6] py-2 px-6"
+                  class="w-[469.5px] hover:bg-[#F6F7F9]/50 outline-none focus:bg-[#F6F7F9] h-[40px] text-[14px] border rounded-lg text-[#667499] border-[#C2C7D6] py-2 px-6"
                   v-model="form.nonGenericPrescriptions"
                 >
                   <option value="">Select</option>
@@ -395,7 +447,7 @@ export default defineComponent({
                   placeholder="0"
                   class="w-[357.5px] mr-[4px] rounded-[4px]"
                 />
-                <currencySelect />
+                <currencySelect v-model="form.currency" />
               </div>
             </label>
           </div>
@@ -407,52 +459,9 @@ export default defineComponent({
         <myButton>Save as Draft</myButton>
         <myButton
           type="submit"
-          :disabled="
-            !form.owner ||
-            !form.address ||
-            !form.billing ||
-            !form.coverage ||
-            !form.deductible ||
-            !form.dentalBenefit ||
-            !form.dentalBenefitAmount ||
-            !form.email ||
-            !form.estNumberOfEmployees ||
-            !form.genericPrescriptions ||
-            !form.genericPrescriptionsAmount ||
-            !form.groupPolicyNumber ||
-            !form.phone ||
-            !form.medicalBenefit ||
-            !form.medicalBenefitAmount ||
-            !form.name ||
-            !form.plan ||
-            !form.visionBenefit ||
-            !form.visionBenefitAmount ||
-            !form.nonGenericPrescriptionsAmount ||
-            !form.nonGenericPrescriptions
-          "
+          :disabled="!isFormValid()"
           :class="{
-            'bg-[#FE4D3C]/50 cursor-not-allowed':
-              !form.owner ||
-              !form.address ||
-              !form.billing ||
-              !form.coverage ||
-              !form.deductible ||
-              !form.dentalBenefit ||
-              !form.dentalBenefitAmount ||
-              !form.email ||
-              !form.estNumberOfEmployees ||
-              !form.genericPrescriptions ||
-              !form.genericPrescriptionsAmount ||
-              !form.groupPolicyNumber ||
-              !form.phone ||
-              !form.medicalBenefit ||
-              !form.medicalBenefitAmount ||
-              !form.name ||
-              !form.plan ||
-              !form.visionBenefit ||
-              !form.visionBenefitAmount ||
-              !form.nonGenericPrescriptions ||
-              !form.nonGenericPrescriptionsAmount
+            'bg-[#FE4D3C]/50 cursor-not-allowed': !isFormValid()
           }"
           class="bg-[#FE4D3C] text-white border-none ml-[16px]"
           >Save</myButton
