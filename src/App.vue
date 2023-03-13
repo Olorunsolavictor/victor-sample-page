@@ -45,28 +45,28 @@ export default defineComponent({
     save() {
       console.log(this.form)
       ;(this.form.description = ''),
-        (this.form.groupPolicyNumber = 0),
-        (this.form.estNumberOfEmployees = 0),
-        (this.form.billing = 0),
+        (this.form.groupPolicyNumber = null),
+        (this.form.estNumberOfEmployees = null),
+        (this.form.billing = null),
         (this.form.name = ''),
         (this.form.email = ''),
         (this.form.address = ''),
         (this.form.phone = ''),
         (this.form.plan = ''),
         (this.form.coverage = ''),
-        (this.form.deductible = 0),
+        (this.form.deductible = null),
         (this.form.medicalBenefit = ''),
-        (this.form.medicalBenefitAmount = 0),
+        (this.form.medicalBenefitAmount = null),
         (this.form.currency = ''),
         (this.form.medicalBenefitAmountCurrency = ''),
         (this.form.visionBenefit = ''),
-        (this.form.visionBenefitAmount = 0),
+        (this.form.visionBenefitAmount = null),
         (this.form.dentalBenefit = ''),
-        (this.form.dentalBenefitAmount = 0),
+        (this.form.dentalBenefitAmount = null),
         (this.form.genericPrescriptions = ''),
-        (this.form.genericPrescriptionsAmount = 0),
+        (this.form.genericPrescriptionsAmount = null),
         (this.form.nonGenericPrescriptions = ''),
-        (this.form.nonGenericPrescriptionsAmount = 0)
+        (this.form.nonGenericPrescriptionsAmount = null)
     },
     isFormValid() {
       if (
